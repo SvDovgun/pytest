@@ -1,6 +1,12 @@
 import pytest
 import requests
 
+@pytest.fixture()
+def database():
+    print("connect....")
+    data = 10
+    yield data
+    print("close....")
 
 @pytest.fixture(scope="session")
 def postman_request():
